@@ -1,0 +1,154 @@
+[
+    {
+        "id": "a309e6f0.ca6268",
+        "type": "tab",
+        "label": "Flow 1 (Bluemix/Output)",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1b54031d.a7aacd",
+        "type": "tab",
+        "label": "Flow 2 (Bluemix/Input)",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f60ad1e3.35544",
+        "type": "ibmiot in",
+        "z": "a309e6f0.ca6268",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": true,
+        "allApplications": "",
+        "allDeviceTypes": true,
+        "allLogicalInterfaces": "",
+        "allEvents": true,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "31d9652f.65fb0a"
+            ]
+        ]
+    },
+    {
+        "id": "31d9652f.65fb0a",
+        "type": "debug",
+        "z": "a309e6f0.ca6268",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 420,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "290c764e.3b182a",
+        "type": "inject",
+        "z": "1b54031d.a7aacd",
+        "name": "Normal",
+        "topic": "",
+        "payload": "Normal",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "178fac75.9c5a94"
+            ]
+        ]
+    },
+    {
+        "id": "389baed4.dff8e2",
+        "type": "inject",
+        "z": "1b54031d.a7aacd",
+        "name": "Alert",
+        "topic": "",
+        "payload": "Alert",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "178fac75.9c5a94"
+            ]
+        ]
+    },
+    {
+        "id": "178fac75.9c5a94",
+        "type": "function",
+        "z": "1b54031d.a7aacd",
+        "name": "format message",
+        "func": "msg.payload = { \"a\" : { \"indicator\" : msg.payload}};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "4f537f22.c7fc8"
+            ]
+        ]
+    },
+    {
+        "id": "4f537f22.c7fc8",
+        "type": "json",
+        "z": "1b54031d.a7aacd",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 140,
+        "wires": [
+            [
+                "b2f95995.ba7f58"
+            ]
+        ]
+    },
+    {
+        "id": "b2f95995.ba7f58",
+        "type": "ibmiot out",
+        "z": "1b54031d.a7aacd",
+        "authentication": "boundService",
+        "apiKey": "",
+        "outputType": "cmd",
+        "deviceId": "0800278ef483",
+        "deviceType": "raspberrypi",
+        "eventCommandType": "statusindicator",
+        "format": "json",
+        "data": "{}",
+        "qos": 0,
+        "name": "IBM IoT",
+        "service": "registered",
+        "x": 640,
+        "y": 140,
+        "wires": []
+    }
+]

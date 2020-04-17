@@ -1,0 +1,112 @@
+[
+    {
+        "id": "90d62dc9.c8d95",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c24aa2cd.513b5",
+        "type": "wiotp-credentials",
+        "z": "",
+        "name": "",
+        "org": "e2g2tr",
+        "serverName": "",
+        "devType": "raspberrypiGW",
+        "devId": "52212117444",
+        "keepalive": "60",
+        "cleansession": true,
+        "tls": "",
+        "usetls": false
+    },
+    {
+        "id": "191a1adb.213105",
+        "type": "rpi-sensehatsim in",
+        "z": "90d62dc9.c8d95",
+        "name": "",
+        "motion": false,
+        "env": true,
+        "stick": false,
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "1c77dd9f.5bd6d2"
+            ]
+        ]
+    },
+    {
+        "id": "1c77dd9f.5bd6d2",
+        "type": "delay",
+        "z": "90d62dc9.c8d95",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "e2b22dac.b7458"
+            ]
+        ]
+    },
+    {
+        "id": "e2b22dac.b7458",
+        "type": "function",
+        "z": "90d62dc9.c8d95",
+        "name": "Env. Data",
+        "func": "msg.payload = {\"Data\" : {\"Environment\" : msg.payload}};\nmsg.deviceType = \"senseHat\";\nmsg.deviceId =\"senb52212117444\"; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 160,
+        "wires": [
+            [
+                "9aaffeb0.57039",
+                "148352d0.b108cd"
+            ]
+        ]
+    },
+    {
+        "id": "9aaffeb0.57039",
+        "type": "debug",
+        "z": "90d62dc9.c8d95",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "148352d0.b108cd",
+        "type": "wiotp out",
+        "z": "90d62dc9.c8d95",
+        "authType": "g",
+        "qs": "false",
+        "qsDeviceId": "",
+        "deviceKey": "c24aa2cd.513b5",
+        "deviceType": "",
+        "deviceId": "",
+        "event": "event",
+        "format": "json",
+        "qos": "",
+        "name": "",
+        "x": 670,
+        "y": 240,
+        "wires": []
+    }
+]

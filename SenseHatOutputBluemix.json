@@ -1,0 +1,387 @@
+[
+    {
+        "id": "8c6aa64d.a56308",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b0d7ee62.9201",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "42ecdb6f.f4d1b4",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5c2c75c2.3181dc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "340ac2cb.f374be",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Environment",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8db4d83e.51a298",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "340ac2cb.f374be",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8d386479.61fed8",
+        "type": "ibmiot in",
+        "z": "8c6aa64d.a56308",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "senb52212117444",
+        "applicationId": "",
+        "deviceType": "senseHat",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": false,
+        "allApplications": "",
+        "allDeviceTypes": false,
+        "allLogicalInterfaces": "",
+        "allEvents": true,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "a0b8d107.2ff7e"
+            ]
+        ]
+    },
+    {
+        "id": "a0b8d107.2ff7e",
+        "type": "debug",
+        "z": "8c6aa64d.a56308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 300,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f329b57f.8243a8",
+        "type": "ui_button",
+        "z": "b0d7ee62.9201",
+        "name": "",
+        "group": "8db4d83e.51a298",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "225f713b.4074ae",
+        "type": "function",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "Suhu",
+        "func": "msg.payload=msg.payload.d.Data.Environment.temperature;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "ad9bf929.6d6e38"
+            ]
+        ]
+    },
+    {
+        "id": "edcd6de9.bca44",
+        "type": "function",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "Kelembapan",
+        "func": "msg.payload=msg.payload.d.Data.Environment.humidity;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "52f39c97.b4c234"
+            ]
+        ]
+    },
+    {
+        "id": "6f1152c7.af87bc",
+        "type": "function",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "Tekanan",
+        "func": "msg.payload=msg.payload.d.Data.Environment.pressure;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "77ca1c92.ae7dc4"
+            ]
+        ]
+    },
+    {
+        "id": "ad9bf929.6d6e38",
+        "type": "ui_gauge",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "Suhu",
+        "group": "8db4d83e.51a298",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Suhu",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 490,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "52f39c97.b4c234",
+        "type": "ui_gauge",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "Kelembapan",
+        "group": "8db4d83e.51a298",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kelembapan",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "160",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "77ca1c92.ae7dc4",
+        "type": "ui_gauge",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "Tekanan",
+        "group": "8db4d83e.51a298",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Tekanan",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 500,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8d09e480.d9cea8",
+        "type": "ibmiot in",
+        "z": "42ecdb6f.f4d1b4",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "logicalInterface": "",
+        "ruleId": "",
+        "deviceId": "senb52212117444",
+        "applicationId": "",
+        "deviceType": "senseHat",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT",
+        "service": "registered",
+        "allDevices": "",
+        "allApplications": "",
+        "allDeviceTypes": false,
+        "allLogicalInterfaces": "",
+        "allEvents": true,
+        "allCommands": "",
+        "allFormats": "",
+        "qos": 0,
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "edcd6de9.bca44",
+                "225f713b.4074ae",
+                "6f1152c7.af87bc",
+                "ad9779f7.65d288"
+            ]
+        ]
+    },
+    {
+        "id": "ad9779f7.65d288",
+        "type": "debug",
+        "z": "42ecdb6f.f4d1b4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 280,
+        "y": 280,
+        "wires": []
+    }
+]
